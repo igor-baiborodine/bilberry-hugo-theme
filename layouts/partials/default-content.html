@@ -44,7 +44,7 @@
     </div>
 
     {{ if or (eq .template_type "single") (.ctx.Params.noSummary) }}
-        {{ if and (gt .ctx.WordCount .ctx.Params.tocMinWordCount ) (.ctx.Params.toc) }}
+        {{ if and (gt .ctx.WordCount .ctx.Site.Params.tocMinWordCount ) (.ctx.Params.toc) }}
             <h2>{{ i18n "tableOfContents" }}</h2>
             {{ .ctx.TableOfContents }}
         {{ end }}
